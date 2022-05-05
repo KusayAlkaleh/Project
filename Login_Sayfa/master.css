@@ -41,19 +41,21 @@ input {
     transition: box-shadow 0.5s ease; 
 }
 
-.btn {
+.reset{
+    width: 100px;
     padding: 5px 20px;
     margin-top: 30px;
     background: transparent;
     border-radius: 30px;
     box-shadow: 0 0 4px #fff;
     cursor: pointer;
+    color: #fff;
 }
 
 input[placeholder]:focus {
     color: #fff;
 }
 
-input:focus, .btn:hover {
+input:focus, .reset:hover {
     box-shadow: 0 0 10px #fff;
 }
