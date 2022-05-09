@@ -8,21 +8,21 @@
     <title>LogIn Form</title>
 </head>
 <body>
-    <form>
+    <form action="print.php" method="post">
         <div class="container">
             <div class="login-form">
                 <div class="login">
                     <h3>LogIn</h3>
                 </div>
-                <input type="email" placeholder="E-mail" autofocus required>
-                <input type="password" placeholder="Şifre" required>
+                <input type="email" name="username" placeholder="Kullancı Adı" autofocus required>
+                <input type="password" name="password" placeholder="Şifre" required>
                 <input class="reset" type="submit" value="LogIn">
                 <input class="reset" type="reset" value="Reset">
             </div>
         </div>
+        <video id="video" autoplay muted loop>
+            <source src="Video.mp4" type="video/mp4">
+        </video>
     </form>
-    <video autoplay muted loop>
-        <source src="Video.mp4">
-    </video>
 </body>
 </html>
