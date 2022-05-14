@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şehrim Sayfa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="img-slider">
+        <div class="slide active">
+            <img src="images/birinci.jpg">
+            <div class="info">
+                <h2>şam</h2>
+                <p>Şam veya Dimaşk Suriye'nin başkentidir. Ayrıca, Şam Valiliğinin ve Rif Şam Valiliği'nin de idari başkentidir. Şam, dünya tarihi boyunca, hiç aralıksız en uzun süre kullanılan şehir olarak anılır,Dünya tarihindeki ilk cinayet olan Kabil ile Habil olayının Şam'ın kuzeyindeki Kasiyun Dağı'nda gerçekleştiğine inanılır.</p>
+                <a href="https://tr.wikipedia.org/wiki/%C5%9Eam" target="_blank" class="more">Daha Bilgi</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/ikinci.jpg">
+            <div class="info">
+                <h2>Azem Sarayı</h2>
+                <p>Osmanlılar zamanında Şam Valisi olan tarafından yaptırılan Azem Sarayı, hem ülkenin hem de şehrin en etkileyici yapılarından. Günümüzde müze olarak kullanılan bu sarayda birbirinden güzel el sanatı eserleri sergileniyor</p>
+                <a href="https://tr.wikipedia.org/wiki/Azm_Saray%C4%B1" target="_blank" class="more">Daha Bilgi</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/ününcü.jpg">
+            <div class="info">
+                <h2>Hamidiye Çarşısı</h2>
+                <p>Eski kent surları içerisinde konumlanan Hamidiye Çarşısı, şehrin en kalabalık ve hareketli yerlerinden. Osmanlı döneminde inşa edilen bu tarihi çarşıdan geleneksel Suriye el sanatları.</p>
+                <a href="Hamidiye Çarşısı" target="_blank" class="more">Daha Bilgi</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/dörtüncü.jpg">
+            <div class="info">
+                <h2>Emeviye Camisi</h2>
+                <p>Suriye’deki iç çatışmalar sonrasında epey zarar gören Emeviye Camisi, Aramiler ve Romalılar döneminde tapınak, Bizanslılar zamanında ise katedral olarak kullanıldı.</p>
+                <a href="https://tr.wikipedia.org/wiki/Emev%C3%AE_Camii" target="_blank" class="more">Daha Bilgi</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="btn active"></div>
+            <div class="btn active"></div>
+            <div class="btn active"></div>
+            <div class="btn active"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var slides = document.querySelectorAll('.slide')
+        var btns = document.querySelectorAll('.btn')
+
+        let currentSlide = 1;
+
+        var manualNav = function(manual){
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+
+                btns.forEach((btn) => {
+                    btn.classList.remove('active');
+                });
+            });
+
+            slides[manual].classList.add('active');
+            btns[manual].classList.add('active');
+        }
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                manualNav(i);
+                currentSlide = i;
+            });
+        });
+
+        var repeat = function(activeClass){
+            let active = document.getElementsByClassName('active');
+            let i = 1;
+
+            var repeater = () => {
+                setTimeout(function(){
+                    [...active].forEach((activeSlide) => {
+                        activeSlide.classList.remove('active');
+                    });
+
+                    slides[i].classList.add('active');
+                    btns[i].classList.add('active');
+                    i++;
+
+                    if(slides.length == i){
+                        i = 0;
+                    }
+                    if(i >= slides.length){
+                        return;
+                    }
+                    repeater();
+                }, 10000);
+            }
+            repeater();
+        }
+        repeat();
+
+    </script>
+</body>
+</html>
