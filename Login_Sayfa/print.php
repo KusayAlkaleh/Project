@@ -11,7 +11,7 @@ if(isset($_POST['username'])) {
         echo 'Hoşgeldiniz Qusay ALKLAEH.';
     } 
     else {
-        echo 'HATA, Kullancı adı veya şifre hatalı.';
+        echo 'HATA, Kullancı adı veya şifre hatalı.'
     }
 }
 
